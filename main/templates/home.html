@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<style>
+    {% load static %}
+    body  {
+        background: url("{% static 'main/bg1.jpg' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        font-family: "Courier New";
+
+
+    }
+
+    .rain{
+        height: 100vh;
+        background: url("{% static 'main/rain1.png' %}");
+        animation: rain .3s linear infinite;
+    }
+
+    .rain:before{
+
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        animation: lighting .3s linear infinite;
+        opacity: 0;
+
+    }
+
+    @keyframes rain {
+
+        0%{
+            background-position: 0% 0%;
+
+        }
+        100%{
+            background-position: 20% 100%;
+
+        }
+
+    }
+    .button {
+        background-color: #ddd; /* Green */
+        border: none;
+
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 25px;
+    }
+
+
+    .button5 {font-size: 28px;
+
+        background-color: #cdae17;
+        text-decoration: none;
+    }
+
+
+    .project_name {
+        color: #2f6bde;
+        font-size:64px;
+    }
+    .my_name {
+        color: #d77341;
+        font-size:50px;
+    }
+
+    #main{
+
+
+    }
+
+</style>
+</head>
+<body>
+<div style="padding-top: 180px">
+
+
+
+<div id="main"  style="text-align: center; background:rgba(102,85,85,0.3);  ">
+
+
+
+
+
+    <h1 class="project_name animated fadeInDown " style="padding-top: 30px">Interrogate - The Game</h1>
+    <h4 class="my_name animated fadeInUp ">Team 4</h4>
+<div style="padding-bottom: 30px">
+    <button class="button button5 animated fadeInRightBig" ><a href="{% url 'narration' %}" style="text-decoration: none; color: black">START</a> </button>
+</div>
+</div>
+</div>
+</body>
+
+</html>
