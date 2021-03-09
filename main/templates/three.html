@@ -2,8 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-<head
->
+<head>
     <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -101,6 +100,28 @@
         }
 
     </style>
+    
+<script>
+
+    function getNextArtist(){
+        $.ajax({
+            type: "POST",
+            url: "/facialexp/",
+            dataType: "json",
+            async: "true",
+            data:{ 
+                csrfmiddlewaretoken: '{{csrf_token}}'},
+            success: showNewArtist
+        });
+
+    }
+
+    function showNewArtist(json){
+        // $('#labl').html(json.label);
+        
+    }
+
+</script>
 </head>
 <body >
 
@@ -115,6 +136,11 @@
             <div style="padding-top: 10px; padding-bottom: 20px">
 
                 <h1 class="" style="  color: ghostwhite;">What was the number plate of the car?</h1>
+                <h1 class="" style="  color: ghostwhite;">Do you understand the question?</h1>
+                <div>
+                    <button class="button button5"><a href='javascript:getNextArtist()' >Yes</a></button>
+                    
+                </div>
 
             </div>
             <form method="post">
@@ -136,6 +162,7 @@
             </div>
         </div>
     </div>
+   
 </center>
 
 
