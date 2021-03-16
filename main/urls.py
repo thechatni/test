@@ -20,10 +20,5 @@ from . import views
 
 urlpatterns = [
     path("", views.home, name='home'),
-    path("speech_to_text/", views.speech_to_text, name='speech_to_text'),
-    path("two/", views.two, name='two'),
-    path("three/", views.three, name='three'),
-    path("decision/", views.decision, name='decision'),
-    path("narration/", views.narration, name='narration'),
-    path("facialexp/", views.facialexp, name='facialexp')
+    path("three/", views.three, name='three')
 ]
